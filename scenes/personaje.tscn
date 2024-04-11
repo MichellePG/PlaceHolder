@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw0nd7gfg4ecd"]
+
+[ext_resource type="Script" path="res://scenes/personaje.gd" id="1_m1xh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y8qp"]
+albedo_color = Color(0.839216, 0.701961, 0.854902, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_na7tq"]
+lightmap_size_hint = Vector2i(9, 15)
+material = SubResource("StandardMaterial3D_8y8qp")
+size = Vector3(0.5, 0.7, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gyc8"]
+size = Vector3(0.5, 0.7, 0.5)
+
+[node name="Personaje" type="CharacterBody3D"]
+script = ExtResource("1_m1xh0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_na7tq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7gyc8")

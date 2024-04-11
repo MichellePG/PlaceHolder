@@ -1,10 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://dovb6aqn6dyd"]
+[gd_scene load_steps=4 format=3 uid="uid://dovb6aqn6dyd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2goh1"]
+[ext_resource type="PackedScene" uid="uid://b5lifhtwdj47p" path="res://plataforma.tscn" id="1_0y7o3"]
+[ext_resource type="PackedScene" uid="uid://djixm7mc61fb6" path="res://scenes/plataforma_invisible.tscn" id="1_g0lbb"]
+[ext_resource type="PackedScene" uid="uid://cw0nd7gfg4ecd" path="res://scenes/personaje.tscn" id="2_ucecj"]
 
 [node name="Main" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Plataforma" parent="." instance=ExtResource("1_0y7o3")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_2goh1")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.703377, -0.454959, 0.546144, 0.0216878, 0.781711, 0.623264, -0.710487, -0.426544, 0.559704, 2.13436, 2.35423, 2.09771)
+visible = false
+fov = 75.7068
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.704292, -0.43948, 0.557521, 0.09459, 0.836432, 0.539847, -0.70358, -0.327474, 0.630663, 1.59617, 2.98934, 1.99517)
+shadow_enabled = true
+
+[node name="PlataformaInvisible" parent="." instance=ExtResource("1_g0lbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="PlataformaInvisible2" parent="." instance=ExtResource("1_g0lbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="PlataformaInvisible3" parent="." instance=ExtResource("1_g0lbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="PlataformaInvisible4" parent="." instance=ExtResource("1_g0lbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Personaje" parent="." instance=ExtResource("2_ucecj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
