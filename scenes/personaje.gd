@@ -1,12 +1,14 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 0.5
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var timer = 0.0
+var move_direction
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -19,11 +21,21 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+
+	# Move the character automatically every 3 seconds
+	timer += delta
+	if timer > 1.0:
+		# Choose a random direction
+		var directions = [Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, -1)]
+		var random_dir = directions[randi() % directions.size()]
+		move_direction = random_dir
+		timer = 0.0
+		print(move_direction)
+	
+	# Move the character in the chosen direction
+	if move_direction:
+		velocity.x = move_direction.x * SPEED
+		velocity.z = move_direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
