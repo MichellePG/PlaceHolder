@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 0.5
+const SPEED = 1
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -26,7 +26,7 @@ func _physics_process(delta):
 	timer += delta
 	if timer > 1.0:
 		# Choose a random direction
-		var directions = [Vector3(1, 0, 0), Vector3(-1, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, -1)]
+		var directions = [Vector3(2, 0, 0), Vector3(-2, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, -2)]
 		var random_dir = directions[randi() % directions.size()]
 		move_direction = random_dir
 		timer = 0.0
