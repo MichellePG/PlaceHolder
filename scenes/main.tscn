@@ -6,13 +6,13 @@
 [node name="Main" type="Node3D"]
 script = ExtResource("1_bvgrb")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.703377, -0.454959, 0.546144, 0.0216878, 0.781711, 0.623264, -0.710487, -0.426544, 0.559704, 2.13436, 2.35423, 2.09771)
-fov = 75.7068
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.704292, -0.43948, 0.557521, 0.09459, 0.836432, 0.539847, -0.70358, -0.327474, 0.630663, 1.59617, 2.98934, 1.99517)
 shadow_enabled = true
 
 [node name="Personaje" parent="." instance=ExtResource("2_ucecj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Personaje"]
+transform = Transform3D(0.703377, -0.454959, 0.546144, 0.0216878, 0.781711, 0.623263, -0.710486, -0.426544, 0.559704, 2.13436, 1.35423, 2.09771)
+fov = 75.7068
