@@ -34,7 +34,7 @@ func crear_nueva_plataforma(direccion: Vector3) -> Node3D:
 	ultima_plataforma = nueva_plataforma
 	
 	limpiar_plataformas_invisibles()
-	crear_plataformas_invisibles()
+	crear_plataformas_invisibles(Vector3(0,0,-2))
 	
 	return nueva_plataforma		
 
@@ -46,27 +46,13 @@ func limpiar_plataformas_invisibles():
 
 
 
-func crear_plataformas_invisibles():
+func crear_plataformas_invisibles(direccion : Vector3) :
+	limpiar_plataformas_invisibles()
 	var plataforma_invisible_scene = preload("res://scenes/plataforma_invisible.tscn")
 
 	var ultima_plataforma = get_child(get_child_count() - 1)
 
 	var plataforma_invisible = plataforma_invisible_scene.instantiate()
-	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(Vector3(-2, 0, 0))  # Izquierda
-	plataforma_invisible.name = "PlataformaInvisibleIzquierda"
-	add_child(plataforma_invisible)
-
-	plataforma_invisible = plataforma_invisible_scene.instantiate()
-	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(Vector3(2, 0, 0))   # Derecha
-	plataforma_invisible.name = "PlataformaInvisibleDerecha"
-	add_child(plataforma_invisible)
-
-	plataforma_invisible = plataforma_invisible_scene.instantiate()
-	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(Vector3(0, 0, -2))  # Adelante
-	plataforma_invisible.name = "PlataformaInvisibleAdelante"
-	add_child(plataforma_invisible)
-
-	plataforma_invisible = plataforma_invisible_scene.instantiate()
-	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(Vector3(0, 0, 2))   # Atrás
-	plataforma_invisible.name = "PlataformaInvisibleAtras"
+	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(direccion) 
+	#plataforma_invisible.name = "PlataformaInvisibleDerecha"
 	add_child(plataforma_invisible)
