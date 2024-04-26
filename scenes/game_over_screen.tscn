@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfjq0jm2fo7uv"]
 
 [node name="Game Over Screen" type="MarginContainer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 

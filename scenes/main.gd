@@ -32,5 +32,5 @@ func _input(event):
 
 func _process(_delta):
 	if personaje.velocity.x == 0 and personaje.velocity.y == 0 and personaje.velocity.z == 0 and personaje.global_position.y <-0.5:
-		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+		get_tree().change_scene_to_file("res://ui/death_menu.tscn")
 	
