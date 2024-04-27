@@ -1,7 +1,7 @@
 extends Node3D 
 
 # Importa la definición de PlataformaBase
-const PlataformaBase = preload("res://scenes/plataforma_base.gd")
+const PlataformaBase = preload("res://scenes/plataforma_base2.gd")
 @onready var plataforma_base: PlataformaBase  = PlataformaBase.new()
 var cursor : Vector3 = Vector3(0, 0, -2)
 @onready var personaje = $Personaje
