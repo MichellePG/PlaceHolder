@@ -1,15 +1,13 @@
 extends Label
 
 @onready var timer = $Timer
+var elapsed_time = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	timer.wait_time = 1  # El timer se ejecutará cada segundo
+	timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
+	timer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var tm = round($Timer.get_time_left())
-	set_text(str(tm))
-
-	pass
+func _on_Timer_timeout():
+	elapsed_time += 1
+	text = str(elapsed_time)

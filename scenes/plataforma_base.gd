@@ -2,6 +2,7 @@ extends Node3D
 
 var plataforma_actual: Node3D
 
+
 # Variable para mantener la referencia a la última plataforma creada
 var ultima_plataforma: Node3D = null
 
