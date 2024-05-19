@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://sdmra4abpvch"]
+
+[ext_resource type="Texture2D" uid="uid://uj3u3rmv6a8x" path="res://scenes/verde.png" id="1_8s25t"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(908, 109)
+scale = Vector2(0.14, 0.13)
+texture = ExtResource("1_8s25t")
