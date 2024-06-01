@@ -8,7 +8,7 @@ const PlataformaBase = preload("res://scenes/plataforma_base2.gd")
 @onready var ui = preload("res://ui/ui.tscn").instantiate()
 
 var cursor : Vector3 = Vector3(0, 0, -2)
-@onready var personaje = $Personaje
+@onready var personaje = $Robot
 
 
 func _ready():
