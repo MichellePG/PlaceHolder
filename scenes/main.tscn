@@ -1,10 +1,23 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=3 uid="uid://dovb6aqn6dyd"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://dovb6aqn6dyd"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_bvgrb"]
 [ext_resource type="PackedScene" uid="uid://cw0nd7gfg4ecd" path="res://scenes/personaje.tscn" id="2_ucecj"]
 [ext_resource type="Texture2D" uid="uid://dqs43gx4kauoi" path="res://Starfield_01-1024x1024.png" id="3_7pa3i"]
 [ext_resource type="PackedScene" uid="uid://dg7kakf5tw5pu" path="res://ui/pause_menu.tscn" id="3_gadwa"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="5_pqg7o"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://dyw6red3u1yre" path="res://resources/Textures/Lava/Lava004_2K-JPG_Emission.jpg" id="6_21c0p"]
+[ext_resource type="Texture2D" uid="uid://c1mtapxnoaqm0" path="res://resources/Textures/Lava/Lava004_2K-JPG_Displacement.jpg" id="7_vehty"]
+[ext_resource type="Texture2D" uid="uid://gh1c5rlthaou" path="res://resources/Textures/Lava/Lava004_2K-JPG_NormalGL.jpg" id="8_xtj55"]
+[ext_resource type="Texture2D" uid="uid://ds8oaxxkceqj4" path="res://resources/Textures/Lava/Lava004_2K-JPG_Roughness.jpg" id="9_3fsqt"]
+[ext_resource type="PackedScene" uid="uid://mk46nkfrxs57" path="res://scripts/ranking.tscn" id="11_gc5b8"]
+[ext_resource type="PackedScene" uid="uid://b6mjeupgrxstp" path="res://scenes/robot.tscn" id="11_l16e0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11iiv"]
 panorama = ExtResource("3_7pa3i")
@@ -77,3 +90,5 @@ offset_top = 29.0
 offset_right = 606.0
 offset_bottom = 52.0
 text = "Timer"
+
+[node name="Ranking" parent="." instance=ExtResource("11_gc5b8")]

@@ -7,6 +7,7 @@ var platform_icons: Array = []
 func _ready():
 	update_platform_queue([])  # Limpia la cola de plataformas inicialmente
 
+
 # Actualiza la cola de plataformas
 func update_platform_queue(platforms: Array):
 
@@ -18,4 +19,3 @@ func update_platform_queue(platforms: Array):
 	#	var icon_instance = icon_scene.instantiate()
 	#	platform_icons.append(icon_instance)
 	#	platform_queue_container.add_child(icon_instance)
-	
