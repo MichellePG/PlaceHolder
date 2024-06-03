@@ -1,15 +1,23 @@
-[gd_scene load_steps=17 format=3 uid="uid://dovb6aqn6dyd"]
+<<<<<<< Updated upstream
+[gd_scene load_steps=12 format=3 uid="uid://dovb6aqn6dyd"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://dovb6aqn6dyd"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_bvgrb"]
+[ext_resource type="PackedScene" uid="uid://cw0nd7gfg4ecd" path="res://scenes/personaje.tscn" id="2_ucecj"]
 [ext_resource type="Texture2D" uid="uid://dqs43gx4kauoi" path="res://Starfield_01-1024x1024.png" id="3_7pa3i"]
 [ext_resource type="PackedScene" uid="uid://dg7kakf5tw5pu" path="res://ui/pause_menu.tscn" id="3_gadwa"]
-[ext_resource type="Texture2D" uid="uid://cwu8718e67me2" path="res://resources/Textures/Lava/Lava004_2K-JPG_Color.jpg" id="5_no6hf"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="5_pqg7o"]
+<<<<<<< Updated upstream
+=======
 [ext_resource type="Texture2D" uid="uid://dyw6red3u1yre" path="res://resources/Textures/Lava/Lava004_2K-JPG_Emission.jpg" id="6_21c0p"]
 [ext_resource type="Texture2D" uid="uid://c1mtapxnoaqm0" path="res://resources/Textures/Lava/Lava004_2K-JPG_Displacement.jpg" id="7_vehty"]
 [ext_resource type="Texture2D" uid="uid://gh1c5rlthaou" path="res://resources/Textures/Lava/Lava004_2K-JPG_NormalGL.jpg" id="8_xtj55"]
 [ext_resource type="Texture2D" uid="uid://ds8oaxxkceqj4" path="res://resources/Textures/Lava/Lava004_2K-JPG_Roughness.jpg" id="9_3fsqt"]
+[ext_resource type="PackedScene" uid="uid://mk46nkfrxs57" path="res://scripts/ranking.tscn" id="11_gc5b8"]
 [ext_resource type="PackedScene" uid="uid://b6mjeupgrxstp" path="res://scenes/robot.tscn" id="11_l16e0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11iiv"]
 panorama = ExtResource("3_7pa3i")
@@ -23,22 +31,12 @@ background_mode = 2
 background_energy_multiplier = 2.11
 sky = SubResource("Sky_1kpkr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmsyw"]
-albedo_texture = ExtResource("5_no6hf")
-roughness_texture = ExtResource("9_3fsqt")
-emission_enabled = true
-emission_texture = ExtResource("6_21c0p")
-normal_enabled = true
-normal_texture = ExtResource("8_xtj55")
-heightmap_enabled = true
-heightmap_deep_parallax = true
-heightmap_min_layers = 8
-heightmap_max_layers = 32
-heightmap_texture = ExtResource("7_vehty")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl11s"]
+albedo_color = Color(1, 0.298039, 0.184314, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_f4yqr"]
-material = SubResource("StandardMaterial3D_gmsyw")
-size = Vector2(50, 50)
+material = SubResource("StandardMaterial3D_fl11s")
+size = Vector2(25, 25)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ew0dw"]
 map_width = 25
@@ -52,20 +50,20 @@ script = ExtResource("1_bvgrb")
 transform = Transform3D(0.704292, -0.43948, 0.557521, 0.09459, 0.836432, 0.539847, -0.70358, -0.327474, 0.630663, 1.59617, 2.98934, 1.99517)
 shadow_enabled = true
 
-[node name="Robot" parent="." instance=ExtResource("11_l16e0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+[node name="Personaje" parent="." instance=ExtResource("2_ucecj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Robot"]
-transform = Transform3D(1.40675, -0.909917, 1.09229, 0.0433756, 1.56342, 1.24653, -1.42097, -0.853089, 1.11941, 4.26872, 2.70846, 4.19542)
+[node name="Camera3D" type="Camera3D" parent="Personaje"]
+transform = Transform3D(0.703377, -0.454959, 0.546144, 0.0216878, 0.781711, 0.623263, -0.710486, -0.426544, 0.559704, 2.13436, 1.35423, 2.09771)
 fov = 75.7068
 
-[node name="PauseMenu" parent="Robot" instance=ExtResource("3_gadwa")]
+[node name="PauseMenu" parent="Personaje" instance=ExtResource("3_gadwa")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_w7uxu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_f4yqr")
@@ -92,3 +90,5 @@ offset_top = 29.0
 offset_right = 606.0
 offset_bottom = 52.0
 text = "Timer"
+
+[node name="Ranking" parent="." instance=ExtResource("11_gc5b8")]
