@@ -7,15 +7,15 @@ script = ExtResource("1_8biaq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 process_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -81.5
-offset_right = 48.0
-offset_bottom = 81.5
+anchors_preset = -1
+anchor_left = 0.515
+anchor_top = 0.453
+anchor_right = 0.515
+anchor_bottom = 0.453
+offset_left = -177.28
+offset_top = -141.544
+offset_right = 176.72
+offset_bottom = 222.456
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -46,3 +46,19 @@ text = "Main Menu"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SurvivedTime" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BestTime" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TimesList" type="ItemList" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
