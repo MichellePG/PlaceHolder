@@ -6,7 +6,8 @@ var ultima_plataforma: Node3D = null
 var cola_de_plataformas = []  # Nueva cola para plataformas
 var escenas_de_plataformas = [
 	preload("res://scenes/plataforma_base.tscn"),
-	preload("res://scenes/plataforma_base2.tscn")
+	preload("res://scenes/plataforma_base2.tscn"),
+	preload("res://scenes/plataforma_muralla.tscn")
 ]
 
 var iconos_de_plataformas = {
@@ -48,6 +49,12 @@ func crear_nueva_plataforma(direccion: Vector3) -> Node3D:
 		añadir_a_cola()  # Añade una nueva plataforma a la cola para reemplazar la usada
 		limpiar_plataformas_invisibles()
 		crear_plataformas_invisibles(Vector3(0,0,-2))
+		
+		if nueva_plataforma.get_meta("string") == "muralla":
+			var rotacion_script = load("res://scripts/rotar_plataforma_muralla.gd").new()
+			rotacion_script.owner = nueva_plataforma
+			nueva_plataforma.add_child(rotacion_script)
+			
 		return nueva_plataforma
 	else:
 		# si no hay plataformas en la cola
@@ -68,5 +75,5 @@ func crear_plataformas_invisibles(direccion : Vector3) :
 
 	var plataforma_invisible = plataforma_invisible_scene.instantiate()
 	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(direccion) 
-	#plataforma_invisible.name = "PlataformaInvisibleDerecha"
+	
 	add_child(plataforma_invisible)
