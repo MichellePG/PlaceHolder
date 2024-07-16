@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs6wr5me6llhm"
+path="res://.godot/imported/square_sand_roadA_detail.obj-32ea75ae177c7cc26be1259542860955.mesh"
+
+[deps]
+
+files=["res://.godot/imported/square_sand_roadA_detail.obj-32ea75ae177c7cc26be1259542860955.mesh"]
+
+source_file="res://resources/Textures/Tiles/square_sand_roadA_detail.obj"
+dest_files=["res://.godot/imported/square_sand_roadA_detail.obj-32ea75ae177c7cc26be1259542860955.mesh", "res://.godot/imported/square_sand_roadA_detail.obj-32ea75ae177c7cc26be1259542860955.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

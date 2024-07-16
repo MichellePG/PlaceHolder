@@ -20,8 +20,7 @@ func _ready():
 	quit.pressed.connect(_on_quit_pressed)
 	update_ui()
 	survived_time.connect("game_over", Callable(self, "end_game"))
-	#set_survived_time()
-	#get_node("/root/main").connect("game_over",  Callable(self, "set_survived_time"))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_play_again_pressed():

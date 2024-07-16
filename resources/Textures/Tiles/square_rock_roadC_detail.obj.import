@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lu7q6n6c6bqi"
+path="res://.godot/imported/square_rock_roadC_detail.obj-22ba281c84abda2894a17fab85e52375.mesh"
+
+[deps]
+
+files=["res://.godot/imported/square_rock_roadC_detail.obj-22ba281c84abda2894a17fab85e52375.mesh"]
+
+source_file="res://resources/Textures/Tiles/square_rock_roadC_detail.obj"
+dest_files=["res://.godot/imported/square_rock_roadC_detail.obj-22ba281c84abda2894a17fab85e52375.mesh", "res://.godot/imported/square_rock_roadC_detail.obj-22ba281c84abda2894a17fab85e52375.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

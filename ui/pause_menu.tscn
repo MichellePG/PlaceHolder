@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7kakf5tw5pu"]
+[gd_scene load_steps=3 format=3 uid="uid://dg7kakf5tw5pu"]
 
 [ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_qiy4o"]
+[ext_resource type="Texture2D" uid="uid://puy4ggwjf5el" path="res://resources/Textures/5.png" id="2_licg0"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_qiy4o")
@@ -46,3 +47,11 @@ text = "Main Menu"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer"]
+modulate = Color(0.670588, 0.682353, 0.682353, 1)
+show_behind_parent = true
+position = Vector2(-528, -241.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_licg0")
+centered = false

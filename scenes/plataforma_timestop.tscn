@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c10t3xaqj860n"]
+
+[ext_resource type="Script" path="res://scenes/plataforma_timestop.gd" id="1_3gnpu"]
+[ext_resource type="ArrayMesh" uid="uid://jebt3ruh4mpn" path="res://resources/Textures/Tiles/square_sand_detail.obj" id="2_geabs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3pyir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5dg2"]
+size = Vector3(2, 1, 2)
+
+[node name="PlataformaBase" type="Node3D"]
+script = ExtResource("1_3gnpu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_3pyir")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("2_geabs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0777722, 0)
+shape = SubResource("BoxShape3D_b5dg2")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505635, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0089457, 0)
+shape = SubResource("BoxShape3D_b5dg2")
