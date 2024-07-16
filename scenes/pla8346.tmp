@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c10t3xaqj860n"]
+
+[ext_resource type="Script" path="res://scenes/plataforma_timestop.gd" id="1_3gnpu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgqpi"]
+size = Vector3(2, 0.7, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvcl6"]
+albedo_color = Color(0, 0.901961, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5dg2"]
+size = Vector3(2, 0.7, 2)
+
+[node name="PlataformaBase" type="Node3D"]
+script = ExtResource("1_3gnpu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+disable_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_pgqpi")
+surface_material_override/0 = SubResource("StandardMaterial3D_yvcl6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_b5dg2")

@@ -7,7 +7,8 @@ var cola_de_plataformas = []  # Nueva cola para plataformas
 var escenas_de_plataformas = [
 	preload("res://scenes/plataforma_base.tscn"),
 	preload("res://scenes/plataforma_base2.tscn"),
-	preload("res://scenes/plataforma_muralla.tscn")
+	preload("res://scenes/plataforma_muralla.tscn"),
+	preload("res://scenes/plataforma_timestop.tscn")
 ]
 
 var iconos_de_plataformas = {
@@ -55,6 +56,11 @@ func crear_nueva_plataforma(direccion: Vector3) -> Node3D:
 			rotacion_script.owner = nueva_plataforma
 			nueva_plataforma.add_child(rotacion_script)
 			
+		if nueva_plataforma.name == "TimeStop":
+			var area = nueva_plataforma.get_node("Area3D")
+			area.connect("body_entered", Callable(self, "_on_timestop_entered"))	
+			
+			
 		return nueva_plataforma
 	else:
 		# si no hay plataformas en la cola
@@ -77,3 +83,4 @@ func crear_plataformas_invisibles(direccion : Vector3) :
 	plataforma_invisible.global_transform.origin = ultima_plataforma.to_global(direccion) 
 	
 	add_child(plataforma_invisible)
+

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcly7ys4tx0dy"
+path="res://.godot/imported/square_water_detail_noSides.obj-f467e0e44eba5c1d8544a1d8f9f0ff55.mesh"
+
+[deps]
+
+files=["res://.godot/imported/square_water_detail_noSides.obj-f467e0e44eba5c1d8544a1d8f9f0ff55.mesh"]
+
+source_file="res://resources/Textures/Tiles/square_water_detail_noSides.obj"
+dest_files=["res://.godot/imported/square_water_detail_noSides.obj-f467e0e44eba5c1d8544a1d8f9f0ff55.mesh", "res://.godot/imported/square_water_detail_noSides.obj-f467e0e44eba5c1d8544a1d8f9f0ff55.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

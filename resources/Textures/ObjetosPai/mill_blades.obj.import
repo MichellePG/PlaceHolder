@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://i2om1spoehx2"
+path="res://.godot/imported/mill_blades.obj-e989d12256d7b180189ceac1d78140ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mill_blades.obj-e989d12256d7b180189ceac1d78140ea.mesh"]
+
+source_file="res://resources/Textures/ObjetosPai/mill_blades.obj"
+dest_files=["res://.godot/imported/mill_blades.obj-e989d12256d7b180189ceac1d78140ea.mesh", "res://.godot/imported/mill_blades.obj-e989d12256d7b180189ceac1d78140ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
