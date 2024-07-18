@@ -68,10 +68,10 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
 
-[node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HowToPlay" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Options"
+text = "How To Play"
 
 [node name="Credits" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

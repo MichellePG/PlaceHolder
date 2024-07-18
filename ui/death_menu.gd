@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var play_again = %PlayAgain
-@onready var options = %Options
+@onready var howtoplay = %HowToPlay
 @onready var main_menu = %MainMenu
 @onready var quit = %Quit
 
@@ -17,6 +17,7 @@ func _ready():
 	add_child(ranking)
 	play_again.pressed.connect(_on_play_again_pressed)
 	main_menu.pressed.connect(_on_main_menu_pressed)
+	howtoplay.pressed.connect(_on_howtoplay_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 	update_ui()
 	survived_time.connect("game_over", Callable(self, "end_game"))
@@ -29,6 +30,9 @@ func _on_play_again_pressed():
 func _on_main_menu_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://ui/MenuInicial.tscn")
+	
+func _on_howtoplay_pressed():
+	get_tree().change_scene_to_file("res://ui/HowToPlay.tscn")
 
 
 func _on_quit_pressed():
