@@ -11,8 +11,6 @@ extends MarginContainer
 func _ready():
 	
 	play.pressed.connect(_on_play_pressed)
-	options.pressed.connect(_on_options_pressed)
-	guide.pressed.connect(_on_guide_pressed)
 	credits.pressed.connect(_on_credits_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 
@@ -21,11 +19,8 @@ func _on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
-func _on_guide_pressed():
-	get_tree().change_scene_to_file("res://ui/HowtoPlay.tscn")
-
 func _on_credits_pressed():
-	audio.play()
-	
+	get_tree().change_scene_to_file("res://ui/Credits.tscn")
+
 func _on_quit_pressed():
 	get_tree().quit()
