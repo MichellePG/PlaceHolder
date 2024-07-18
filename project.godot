@@ -15,9 +15,9 @@ run/main_scene="res://ui/MenuInicial.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[filesystem]
 
-Music="*res://ui/music.gd"
+import/fbx/enabled=false
 
 [input]
 

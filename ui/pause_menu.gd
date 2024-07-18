@@ -23,11 +23,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 		visible = get_tree().paused	
-
-func _on_options_pressed():
-	audio.play()
-	get_tree().change_scene_to_file("res://ui/HowtoPlay.tscn")
-
 	
 func _on_main_menu_pressed():
 	get_tree().paused = false
