@@ -28,7 +28,6 @@ MarginContainer/constants/margin_top = 24
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -82,6 +81,7 @@ text = "Special Thanks:"
 horizontal_alignment = 1
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 79.0
 offset_right = 610.0
@@ -105,6 +105,7 @@ ocean-and-clouds-free-pixel-art-backgrounds"
 horizontal_alignment = 1
 
 [node name="PanelContainer5" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 623.0
 offset_top = 79.0
 offset_right = 1123.0
@@ -127,3 +128,23 @@ License Link: https://dova-s.jp/_contents/license/
 Licensor Store Link: https://dova-s.jp/bgm/play17531.html
 "
 horizontal_alignment = 1
+
+[node name="PanelContainer6" type="PanelContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -198.0
+offset_right = 238.0
+offset_bottom = -97.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="PanelContainer6"]
+layout_mode = 2
+text = " Developers:
+  * Andrea Trigo
+  * Diego Riquelme
+  * Michelle Pérez
+"
