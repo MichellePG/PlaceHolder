@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var resume = %Resume
-@onready var options = %Options
+@onready var howtoplay = %HowToPlay
 @onready var main_menu = %MainMenu
 @onready var quit = %Quit
 
@@ -11,6 +11,7 @@ func _ready():
 	
 	resume.pressed.connect(_on_resume_pressed)
 	main_menu.pressed.connect(_on_main_menu_pressed)
+	howtoplay.pressed.connect(_on_howtoplay_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 	hide()
 
@@ -27,7 +28,10 @@ func _input(event: InputEvent) -> void:
 func _on_main_menu_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://ui/MenuInicial.tscn")
-
+	
+func _on_howtoplay_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://ui/HowToPlay.tscn")
 
 
 func _on_quit_pressed():
