@@ -9,24 +9,30 @@ extends CanvasLayer
 @onready var best_time = %BestTime
 @onready var times_list = %TimesList
 
-@onready var ranking = preload("res://scripts/ranking.tscn").instantiate()
+@onready var audio = %AudioButton
 
+@onready var ranking = preload("res://scripts/ranking.tscn").instantiate()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if not Music.playing:
+		Music.play_music("main_theme")
 	add_child(ranking)
 	play_again.pressed.connect(_on_play_again_pressed)
 	main_menu.pressed.connect(_on_main_menu_pressed)
 	quit.pressed.connect(_on_quit_pressed)
 	update_ui()
 	survived_time.connect("game_over", Callable(self, "end_game"))
-
+	#set_survived_time()
+	#get_node("/root/main").connect("game_over",  Callable(self, "set_survived_time"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_play_again_pressed():
+	audio.play()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	
 func _on_main_menu_pressed():
+	audio.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://ui/MenuInicial.tscn")
 
