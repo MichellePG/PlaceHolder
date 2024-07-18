@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dutmpgtnie5gd"
+path="res://.godot/imported/square_sand.obj-e436c4bad767af1bb418e743479147ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/square_sand.obj-e436c4bad767af1bb418e743479147ce.mesh"]
+
+source_file="res://resources/Textures/Tiles/square_sand.obj"
+dest_files=["res://.godot/imported/square_sand.obj-e436c4bad767af1bb418e743479147ce.mesh", "res://.godot/imported/square_sand.obj-e436c4bad767af1bb418e743479147ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
