@@ -1,21 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://dovb6aqn6dyd"]
+[gd_scene load_steps=18 format=3 uid="uid://dovb6aqn6dyd"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_bvgrb"]
+[ext_resource type="Texture2D" uid="uid://dqs43gx4kauoi" path="res://Starfield_01-1024x1024.png" id="3_7pa3i"]
 [ext_resource type="PackedScene" uid="uid://dg7kakf5tw5pu" path="res://ui/pause_menu.tscn" id="3_gadwa"]
-[ext_resource type="Texture2D" uid="uid://lykfigiyiphy" path="res://resources/Textures/autumn_field_puresky_4k.hdr" id="4_008om"]
-[ext_resource type="Texture2D" uid="uid://dpfjqdb5hgvju" path="res://resources/Textures/photos_2017_11_10_fst_sea-ocean-water-texture.jpg" id="5_nrt0m"]
+[ext_resource type="Texture2D" uid="uid://cwu8718e67me2" path="res://resources/Textures/Lava/Lava004_2K-JPG_Color.jpg" id="5_no6hf"]
 [ext_resource type="Script" path="res://scenes/Label.gd" id="5_pqg7o"]
+[ext_resource type="Texture2D" uid="uid://dyw6red3u1yre" path="res://resources/Textures/Lava/Lava004_2K-JPG_Emission.jpg" id="6_21c0p"]
+[ext_resource type="Texture2D" uid="uid://c1mtapxnoaqm0" path="res://resources/Textures/Lava/Lava004_2K-JPG_Displacement.jpg" id="7_vehty"]
+[ext_resource type="Texture2D" uid="uid://gh1c5rlthaou" path="res://resources/Textures/Lava/Lava004_2K-JPG_NormalGL.jpg" id="8_xtj55"]
+[ext_resource type="Texture2D" uid="uid://ds8oaxxkceqj4" path="res://resources/Textures/Lava/Lava004_2K-JPG_Roughness.jpg" id="9_3fsqt"]
 [ext_resource type="PackedScene" uid="uid://mk46nkfrxs57" path="res://scripts/ranking.tscn" id="11_gc5b8"]
 [ext_resource type="PackedScene" uid="uid://b6mjeupgrxstp" path="res://scenes/robot.tscn" id="11_l16e0"]
-[ext_resource type="PackedScene" uid="uid://deft0t4pk0ax2" path="res://scenes/Islas.tscn" id="12_lmyph"]
-[ext_resource type="AudioStream" uid="uid://c0qi1tgjgl5gf" path="res://Assets/Sounds/Cosmic_Fantasy_2.mp3" id="13_lrm4y"]
-[ext_resource type="PackedScene" uid="uid://oo6uxf2qta2w" path="res://scenes/tileplat_1.tscn" id="13_ra160"]
-[ext_resource type="PackedScene" uid="uid://poc5t4lk0uwq" path="res://scenes/tileplat_3.tscn" id="14_cs137"]
-[ext_resource type="PackedScene" uid="uid://bstcaou7ehfm2" path="res://scenes/tileplat_4.tscn" id="15_lsaxl"]
-[ext_resource type="PackedScene" uid="uid://520ddx2gth5a" path="res://scenes/tileplat_13.tscn" id="16_rwkot"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_11iiv"]
-panorama = ExtResource("4_008om")
+panorama = ExtResource("3_7pa3i")
 filter = false
 
 [sub_resource type="Sky" id="Sky_1kpkr"]
@@ -23,14 +21,24 @@ sky_material = SubResource("PanoramaSkyMaterial_11iiv")
 
 [sub_resource type="Environment" id="Environment_w7uxu"]
 background_mode = 2
-background_energy_multiplier = 0.49
+background_energy_multiplier = 2.11
 sky = SubResource("Sky_1kpkr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vs5u"]
-albedo_texture = ExtResource("5_nrt0m")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmsyw"]
+albedo_texture = ExtResource("5_no6hf")
+roughness_texture = ExtResource("9_3fsqt")
+emission_enabled = true
+emission_texture = ExtResource("6_21c0p")
+normal_enabled = true
+normal_texture = ExtResource("8_xtj55")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("7_vehty")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_f4yqr"]
-material = SubResource("StandardMaterial3D_5vs5u")
+material = SubResource("StandardMaterial3D_gmsyw")
 size = Vector2(50, 50)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_ew0dw"]
@@ -87,55 +95,3 @@ offset_bottom = 52.0
 text = "Timer"
 
 [node name="Ranking" parent="." instance=ExtResource("11_gc5b8")]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.80447, 0)
-light_energy = 4.555
-omni_attenuation = 2.73208
-
-[node name="Isla" parent="." instance=ExtResource("12_lmyph")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8573, -2.62403, 3.41209)
-
-[node name="Tileplat1" parent="." instance=ExtResource("13_ra160")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -2, -8)
-
-[node name="Tileplat2" parent="." instance=ExtResource("13_ra160")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -2, -16.0346)
-
-[node name="Tileplat3" parent="." instance=ExtResource("14_cs137")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1126, -2.20832, 7.59854)
-
-[node name="Tileplat4" parent="." instance=ExtResource("15_lsaxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1512, -2.19004, 15.5772)
-
-[node name="Tileplat5" parent="." instance=ExtResource("13_ra160")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, -2.15408, 23.6177)
-
-[node name="Tileplat6" parent="." instance=ExtResource("15_lsaxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1512, -2.19004, -24.1405)
-
-[node name="Tileplat7" parent="." instance=ExtResource("13_ra160")]
-transform = Transform3D(0.00799357, 0, -0.999968, 0, 1, 0, 0.999968, 0, 0.00799357, -19.1526, -2.15408, -32.7833)
-
-[node name="Tileplat8" parent="." instance=ExtResource("14_cs137")]
-transform = Transform3D(0.0115538, 0, -0.999933, 0, 1, 0, 0.999933, 0, 0.0115538, -11.0925, -2.20832, -32.8804)
-
-[node name="Tileplat9" parent="." instance=ExtResource("15_lsaxl")]
-transform = Transform3D(0.00757468, 0, -0.999971, 0, 1, 0, 0.999971, 0, 0.00757468, -3.07732, -2.19004, -32.9044)
-
-[node name="Tileplat10" parent="." instance=ExtResource("15_lsaxl")]
-transform = Transform3D(0.00757468, 0, -0.999971, 0, 1, 0, 0.999971, 0, 0.00757468, 4.98495, -2.19004, -32.9044)
-
-[node name="Tileplat11" parent="." instance=ExtResource("13_ra160")]
-transform = Transform3D(0.00799357, 0, -0.999968, 0, 1, 0, 0.999968, 0, 0.00799357, 13.0064, -2.15408, -32.7833)
-
-[node name="Tileplat12" parent="." instance=ExtResource("14_cs137")]
-transform = Transform3D(0.0115538, 0, -0.999933, 0, 1, 0, 0.999933, 0, 0.0115538, 21.1306, -2.20832, -32.8804)
-
-[node name="Tileplat13" parent="." instance=ExtResource("16_rwkot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.939, -1.92027, -32.1449)
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_lrm4y")
-volume_db = -32.372
-autoplay = true
