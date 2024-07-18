@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7kakf5tw5pu"]
+[gd_scene load_steps=3 format=3 uid="uid://dg7kakf5tw5pu"]
 
 [ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_qiy4o"]
+[ext_resource type="AudioStream" uid="uid://bg4onsurryagv" path="res://Assets/Audio/Modern9.mp3" id="2_pn8mo"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 script = ExtResource("1_qiy4o")
@@ -46,3 +47,7 @@ text = "Main Menu"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="MarginContainer/VBoxContainer"]
+stream = ExtResource("2_pn8mo")
+volume_db = 10.0

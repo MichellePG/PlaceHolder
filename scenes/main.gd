@@ -19,6 +19,9 @@ var cursor : Vector3 = Vector3(0, 0, -2)
 var start_time = 0
 
 func _ready():
+	if not Music.playing:
+		Music.play_music("main_theme")
+
 	add_child(plataforma_base)
 	add_child(ranking)
 	plataforma_base.crear_nueva_plataforma(Vector3(0,0,0))
@@ -53,6 +56,9 @@ func _input(event):
 		#update_platform_queue_ui()  # Actualizar la UI después de colocar una plataforma
 
 func _process(_delta):
+	if not Music.playing:
+		Music.play_music("main_theme")
+		
 	if personaje.velocity.x == 0 and personaje.velocity.y == 0 and personaje.velocity.z == 0 and personaje.global_position.y <-0.5:
 		#get_tree().change_scene_to_file("res://ui/death_menu.tscn")
 		timer_label.end_game()
